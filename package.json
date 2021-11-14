@@ -2,7 +2,7 @@
   "name": "nodejs_task1_cli",
   "version": "1.0.0",
   "description": "**Usage example:**",
-  "main": "index.js",
+  "main": "my_ciphering_cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
