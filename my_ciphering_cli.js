@@ -16,17 +16,10 @@ if (input) {
         process.stderr.write('The file is not accessable or non-exist');
         process.exit();
     }
+} else {
+    process.stdin;
 }
-
-// const readStream = fs.createReadStream(path.join(__dirname, input));
-
-// readStream.on
-// const myReadStream = input ? fs.createReadStream(path.join(__dirname, input)) : process.stdin;
 // const myWriteStream = output ? fs.createWriteStream(path.join(__dirname, output), )
-// const stream = require('stream');
-// const util = require('util');
-// const cisarShift = require('./cisar_shipher');
-
 // const Transform = stream.Transform || require('readable-stream').Transform;
 
 // function Cesar(options) {
