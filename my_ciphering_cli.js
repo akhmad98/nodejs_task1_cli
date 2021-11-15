@@ -2,15 +2,21 @@ const fs = require('fs');
 const path = require('path');
 const program = require('./index');
 const stream = require('stream'); 
-
+const readStream = require('./readableStream');
 
 const { config, input, output } = program.optionValues;
-const { Writable } = require('stream');
-const myStream = new Writable();
-const fooErr = new Error('foo error');
-myStream.destroy(fooErr)
-myStream.on('error', (fooErr) => console.error(fooErr.message))
-console.log(myStream)
+
+let iStream;
+
+if (input) {
+    try {
+        const accessChecker = fs.accessSync(path.join(__dirname, input));
+        if (!accessChecker) iStream = new ReadStream(path.join(__dirname, input))
+    } catch (error) {
+        process.stderr.write('The file is not accessable or non-exist');
+        process.exit();
+    }
+}
 
 // const readStream = fs.createReadStream(path.join(__dirname, input));
 
