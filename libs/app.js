@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Options = require('./options');
+const Acipher = require('./utils');
 const stream = require('stream'); 
 
 class App {
@@ -8,6 +9,9 @@ class App {
         try {
             const options = Options.parce(argv)
             console.log(options)
+
+            const aciphers = Acipher.generateAciphers(options);
+            console.log(aciphers);
         } catch (error) {
             console.error(error);
         }
@@ -17,23 +21,6 @@ class App {
 module.exports = App;
 
 
-// const { config, input, output } = program.optionValues;
-
-// let iStream;
-
-// if (input) {
-//     try {
-//         const accessChecker = fs.accessSync(path.join(__dirname, input));
-//         if (!accessChecker) iStream = new ReadStream(path.join(__dirname, input))
-//     } catch (error) {
-//         process.stderr.write('The file is not accessable or non-exist');
-//         process.exit();
-//     }
-// } else {
-//     process.stdin;
-// }
-// const myWriteStream = output ? fs.createWriteStream(path.join(__dirname, output), )
-// const Transform = stream.Transform || require('readable-stream').Transform;
 
 // function Cesar(options) {
 
