@@ -36,6 +36,36 @@ class  Acipher {
             })
         }
     }
+
+    makeByChar(char) {
+        const upCase = char.toUpperCase();
+
+        const charIndex = 
+          this[this.encode ? "alphabet" : "encodeAlphabet"].indexOf(upCase);
+
+        if (charIndex === -1) {
+            return char;
+        }
+
+        let result = 
+        this[this.encode ? "encodeAlphabet" : "alphabet"][charIndex]
+
+        if (upCase !== char) {
+            result = result.toLowerCase();
+        }
+
+        return result;
+    }
+
+    startEngine(text) {
+        let result = "";
+
+        for(const char of text) {
+            result += this.makeByChar(char);
+        }
+
+        return result;
+    }
 }
 
 module.exports = Acipher;
