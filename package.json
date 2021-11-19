@@ -2,7 +2,7 @@
   "name": "nodejs_task1_cli",
   "version": "1.0.0",
   "description": "**Usage example:**",
-  "main": "my_ciphering_cli.js",
+  "main": "./libs/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/akhmad98/nodejs_task1_cli/issues"
   },
-  "homepage": "https://github.com/akhmad98/nodejs_task1_cli#readme"
+  "homepage": "https://github.com/akhmad98/nodejs_task1_cli#readme",
+  "dependencies": {
+    "prettier": "^2.4.1"
+  }
 }
