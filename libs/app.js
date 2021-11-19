@@ -19,11 +19,9 @@ class App {
                 transformStreams.push(transformStream);
             }
 
-            await pipeline(
-                options.input ? new CustomReadStream(options.input) : process.stdin,
-                ...transformStreams,
-                options.output ? new CustomWriteStream(options.output) : process.stdout
-            );
+            await pipeline(options.input ? new CustomReadStream(options.input) : process.stdin,
+            ...transformStreams, 
+            options.output ? new CustomWriteStream(options.output) : process.stdout);
         } catch (error) {
             console.error(error);
         }
