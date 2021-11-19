@@ -3,6 +3,7 @@ const Readable = require('stream');
 
 class myReadStream extends Readable {
     constructor(filename) {
+        super();
         this.filename = filename;
         this.fd = null;
     }
